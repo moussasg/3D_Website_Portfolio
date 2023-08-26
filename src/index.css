@@ -8,17 +8,24 @@ canvas {
 opacity: 0;
 filter: blur(5px); /*portrait*/
 transform: translateX(-100%);
-transition: all 1s;
+transition:  all 1s;
 }
 @media(prefers-reduced-motion) {
   .hidden {
     transition: none;
   }
 }
+.educ {
+  opacity: 0;
+  filter: blur(5px); /*portrait*/
+  transform: translateX(-100%);
+  transition:  all 1s;
+  }
 .show {
 opacity: 1;
 filter: blur(0);
 transform: translateX(0);
+transition : all 1s;
 }
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
@@ -28,8 +35,6 @@ transform: translateX(0);
   font-weight: 400;
   font-style: normal;
 }
-
-
 main {
   width: 100vw;
   color: white;
@@ -59,15 +64,22 @@ canvas {
     padding: 2rem;
     margin-bottom: var(--spacing);
   }
-  section {
-    grid-column: 2 / 8;
-    padding: 1rem;
+  section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
+    grid-column: 2 / 8; /* 2/8 = a gauche  */
+    padding: 2rem;
     background: var(--dark-bg);
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
-    overflow: hidden; /* pour que tout les eléments reste dans la section*/
   }
+  section.educ {
+    grid-column: 6 / 12; /* 6/12 = a droite  */
+    padding: 2rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+    }
   blockquote {
     margin: 0;
     padding: 0;

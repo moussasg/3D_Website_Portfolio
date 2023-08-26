@@ -72,6 +72,9 @@ const hidenelement = document.querySelectorAll('.hidden') // select all hidden c
 // Commence l'observation
 hidenelement.forEach((el)=>observer.observe(el)) // observe all hiddenelement
 /// to scrolling 
+const educelem = document.querySelectorAll('.educ')
+educelem.forEach((xi)=>observer.observe(xi))
+
 
   
 
