@@ -33,9 +33,11 @@ scene.add(pointLight ,ambientLight)
 /// we put controls inside function animate 
 const controls = new OrbitControls(camera , renderer.domElement) // importé au début , function OrbitControls pour tourné obj en 3D
 // for background we put spaceTexture inside scene.background
-const spaceTexture = new THREE.TextureLoader().load('../greet.jpg')
+const imgfuse = document.getElementById('myfuse'); // myfuse jbtha m index.html
+const imgreet = document.getElementById('mygreet'); // myfuse jbtha m index.html
+const spaceTexture = new THREE.TextureLoader().load(imgreet.src)
 scene.background = spaceTexture 
-    // for adding rotation
+// for adding rotations
 function animate() {
     requestAnimationFrame( animate );
     torus.rotation.x += 0.03
@@ -46,7 +48,7 @@ function animate() {
 }
 animate()
 /// cuebe insidde du torus
-const sarokh = new THREE.TextureLoader().load('../fuse.jpg') // put sarokhe inside cube
+const sarokh = new THREE.TextureLoader().load(imgfuse.src) // put sarokhe inside cube
 const cube = new THREE.Mesh( // put the cube inside 
     new THREE.BoxGeometry(4,4,4),
     new THREE.MeshBasicMaterial({map:sarokh})
