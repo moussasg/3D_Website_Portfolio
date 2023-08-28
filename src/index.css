@@ -84,8 +84,6 @@ header {
 .acomp {
   display: flex;
   gap: 15px;
-  justify-content: center;
-  flex-direction: column;
 }
   section.present {
     margin-top: 10vh;
