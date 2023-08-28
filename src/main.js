@@ -71,10 +71,32 @@ const observer = new IntersectionObserver((entr)=> {
 const hidenelement = document.querySelectorAll('.hidden') // select all hidden class in header in index.html
 // Commence l'observation
 hidenelement.forEach((el)=>observer.observe(el)) // observe all hiddenelement
-/// to scrolling 
+/// to animation 
 const educelem = document.querySelectorAll('.educ')
 educelem.forEach((xi)=>observer.observe(xi))
-
+const mypresent = document.querySelectorAll('.mypresent')
+mypresent.forEach((dr)=>observer.observe(dr))
+/// to scrolling
+const myclique = document.getElementById('myeduc'); // byId direct sans . / dans class dire . 
+myclique.addEventListener('click' , () => {
+const refelem = document.getElementById('goeduc');
+refelem.scrollIntoView({ behavior: 'smooth' }) 
+})
+const myprofession = document.getElementById('myprof');
+myprofession.addEventListener('click' , () => {
+const refprofession = document.getElementById('goprofe');
+refprofession.scrollIntoView({ behavior: 'smooth' }) 
+})
+const myskils = document.getElementById('myskils');
+myskils.addEventListener('click' , () => {
+const refskils = document.getElementById('goskils');
+refskils.scrollIntoView({ behavior: 'smooth' }) 
+})
+const myacomp = document.getElementById('myacomp');
+myacomp.addEventListener('click' , () => {
+const refacomp = document.getElementById('goacomp');
+refacomp.scrollIntoView({ behavior: 'smooth' }) 
+})
 
   
 

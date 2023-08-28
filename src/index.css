@@ -17,9 +17,15 @@ transition:  all 1s;
 }
 .educ {
   opacity: 0;
-  filter: blur(5px); /*portrait*/
+  filter: blur(3px); /*portrait*/
   transform: translateX(-100%);
   transition:  all 1s;
+  }
+  .mypresent {
+    opacity: 0;
+    filter: blur(3px); /*portrait*/
+    transform: translateX(-100%);
+    transition:  all 1s;
   }
 .show {
 opacity: 1;
@@ -27,10 +33,10 @@ filter: blur(0);
 transform: translateX(0);
 transition : all 1s;
 }
+
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
-
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -57,17 +63,46 @@ canvas {
   top: 0;
   left: 0;
 }
-  header {
+.my_resume {
+  display: flex;
+}
+header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%; /* Pour occuper toute la largeur */
+}
+.mypresent {
+  font-size: 2.5rem;
+  line-height: 1.5;
+  width: auto; /* Assurez-vous que la div occupe toute la largeur disponible */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+.acomp {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: column;
+}
+  section.present {
+    margin-top: 10vh;
+    grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
+    display: flex;
+    padding: 1rem;
+    gap: 20vw;
+    font-size: 3rem;
+    border: 3px solid gray;
     background: var(--dark-bg);
-    grid-column: 2 / span 6;
-    font-size: 2.5rem;
-    padding: 2rem;
+    line-height: 2;
     margin-bottom: var(--spacing);
   }
   section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
     grid-column: 2 / 8; /* 2/8 = a gauche  */
-    padding: 2rem;
     background: var(--dark-bg);
+    border: 3px solid gray;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
@@ -76,6 +111,7 @@ canvas {
     grid-column: 6 / 12; /* 6/12 = a droite  */
     padding: 2rem;
     background: var(--dark-bg);
+    border: 3px solid gray;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
@@ -95,4 +131,5 @@ canvas {
   }
   .left {
     grid-column: 6 / 12;
+    border: 3px solid gray;
   }
