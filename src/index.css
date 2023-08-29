@@ -2,7 +2,7 @@
 canvas {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0;  
 }
 .hidden {
 opacity: 0;
@@ -66,6 +66,27 @@ canvas {
 .my_resume {
   display: flex;
 }
+  section.present {
+    max-width: 100%;
+    margin-top: 10vh;
+    grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
+    display: flex;
+    gap: 20vw;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    margin-bottom: var(--spacing);
+  }
+  .mypresent {
+    padding: 2rem;
+    background: var(--dark-bg);
+    border: 3px solid gray;
+    font-size: 2.25rem;
+    line-height: 2.5;
+    }
+    .mypresent p {
+      margin: 0;
+  padding: 0;
+  word-wrap: break-word
+    }
 header {
   display: flex;
   justify-content: center;
@@ -75,30 +96,13 @@ header {
   left: 0;
   width: 100%; /* Pour occuper toute la largeur */
 }
-.mypresent {
-  font-size: 2.5rem;
-  line-height: 1.5;
-  width: auto; /* Assurez-vous que la div occupe toute la largeur disponible */
-  white-space: nowrap; /* Empêche le texte de passer à la ligne */
-}
 .acomp {
   display: flex;
   gap: 15px;
   justify-content: center;
   flex-direction: column;
 }
-  section.present {
-    margin-top: 10vh;
-    grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
-    display: flex;
-    padding: 1rem;
-    gap: 20vw;
-    font-size: 3rem;
-    border: 3px solid gray;
-    background: var(--dark-bg);
-    line-height: 2;
-    margin-bottom: var(--spacing);
-  }
+/* Appliquer un style à l'image */
   section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
     grid-column: 2 / 8; /* 2/8 = a gauche  */
     background: var(--dark-bg);
@@ -106,6 +110,30 @@ header {
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+  }
+#textcert {
+display: flex;
+justify-content: center;
+font-size: 40px;
+  background: -webkit-linear-gradient(top, rgb(191, 0, 255), rgb(207, 207, 214));
+  }
+  .showme {
+    color: blueviolet;
+  }
+  .fotrcert {
+  width: 100vw;
+  display: flex;
+  gap: 8%;
+  }
+  .fotrcert > div { /* > siginie les enfants direct du fotrcert */
+    width: 25vw;
+  }
+  .fotrcert img {
+    width: 100%;
+  }
+  footer.cert {
+    width: 10px;
+    height: 20px;
   }
   section.educ {
     grid-column: 6 / 12; /* 6/12 = a droite  */

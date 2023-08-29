@@ -97,7 +97,14 @@ myacomp.addEventListener('click' , () => {
 const refacomp = document.getElementById('goacomp');
 refacomp.scrollIntoView({ behavior: 'smooth' }) 
 })
-
+//
+const mydip = document.querySelectorAll('.showme');
+mydip.forEach(mydip=> {
+mydip.addEventListener('click' , () => {
+const refdip = document.querySelector('.showcert');
+refdip.scrollIntoView({ behavior: 'smooth' }) 
+})
+})
   
 
 
