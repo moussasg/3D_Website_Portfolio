@@ -1,25 +1,25 @@
+
+@media (max-width: 2000px)   { /* il s'aplique au 2000 et -*/
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;  
+  }
 @import url("https://use.typekit.net/jmk3xov.css");
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;  
-}
+
 .hidden {
 opacity: 0;
 filter: blur(5px); /*portrait*/
 transform: translateX(-100%);
 transition:  all 1s;
-}
-@media(prefers-reduced-motion) {
-  .hidden {
-    transition: none;
-  }
+width: 90%;
 }
 .educ {
   opacity: 0;
   filter: blur(3px); /*portrait*/
   transform: translateX(-100%);
   transition:  all 1s;
+  width: 90%;
   }
   .mypresent {
     opacity: 0;
@@ -33,7 +33,6 @@ filter: blur(0);
 transform: translateX(0);
 transition : all 1s;
 }
-
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 350px;
@@ -42,11 +41,10 @@ transition : all 1s;
   font-style: normal;
 }
 main {
-  width: 100vw;
+  width: 90%;
   color: white;
   z-index: 99;
   position: absolute;
-  width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
   display: grid;
@@ -66,35 +64,40 @@ canvas {
 .my_resume {
   display: flex;
 }
-  section.present {
-    max-width: 100%;
-    margin-top: 10vh;
+section.present {
+  max-width: 100%;
+  display: flex;
+  gap:20vw;
+  margin-top: 10vh;
+  grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
+  margin-bottom: var(--spacing);
+}
+@media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
+  .present {
+    white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
     grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
-    display: flex;
-    gap: 20vw;
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    margin-bottom: var(--spacing);
   }
-  .mypresent {
-    padding: 2rem;
-    background: var(--dark-bg);
-    border: 3px solid gray;
-    font-size: 2.25rem;
-    line-height: 2.5;
-    }
+}
+.mypresent { 
+  padding: 2rem;
+  background: var(--dark-bg);
+  border: 3px solid gray;
+  font-size: 2.25rem;
+  line-height: 2.5;
+  }
     .mypresent p {
       margin: 0;
   padding: 0;
   word-wrap: break-word
     }
 header {
+  width: 90%;
   display: flex;
   justify-content: center;
   gap: 20px;
   position: absolute;
   top: 15px;
-  left: 0;
-  width: 100%; /* Pour occuper toute la largeur */
+  left: 100px;
 }
 .acomp {
   display: flex;
@@ -121,7 +124,6 @@ font-size: 40px;
     color: blueviolet;
   }
   .fotrcert {
-  width: 100vw;
   display: flex;
   gap: 8%;
   }
@@ -129,11 +131,11 @@ font-size: 40px;
     width: 25vw;
   }
   .fotrcert img {
-    width: 100%;
+    width: 90%;
   }
   footer.cert {
-    width: 10px;
-    height: 20px;
+    width: 10%;
+    height: 20%;
   }
   section.educ {
     grid-column: 6 / 12; /* 6/12 = a droite  */
@@ -141,8 +143,22 @@ font-size: 40px;
     background: var(--dark-bg);
     border: 3px solid gray;
     font-size: 1.25rem;
+    width: auto;
     line-height: 1.5;
     margin-bottom: var(--spacing);
+    }
+    .educ .coverweb img  {
+      max-width: 100%; /* Make the images responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .educ .coverweb h2  {
+      max-width: 100%; /* Make the images responsive */
+      height: auto; /* Maintain aspect ratio */
+    }
+    @media screen and (max-width: 600px) { /* il s'aplique au 600 et -*/
+      .educ h2 {
+        font-size: 1rem; /* Adjust font size as needed */
+      }
     }
   blockquote {
     margin: 0;
@@ -161,3 +177,4 @@ font-size: 40px;
     grid-column: 6 / 12;
     border: 3px solid gray;
   }
+}
