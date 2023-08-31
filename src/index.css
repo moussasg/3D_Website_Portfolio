@@ -1,5 +1,4 @@
 
-@media (max-width: 2000px)   { /* il s'aplique au 2000 et -*/
   canvas {
     position: fixed;
     top: 0;
@@ -177,4 +176,3 @@ font-size: 40px;
     grid-column: 6 / 12;
     border: 3px solid gray;
   }
-}
