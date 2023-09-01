@@ -65,14 +65,7 @@ left: 0;
 .my_resume {
 display: flex;
 }
-section.present {
-max-width: 100%;
-display: flex;
-gap:20vw;
-margin-top: 10vh;
-grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
-margin-bottom: var(--spacing);
-}
+
 @media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
 .present {
   white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
@@ -90,7 +83,7 @@ line-height: 2.5;
   .mypresent p {
     margin: 0;
 padding: 0;
-word-wrap: break-word
+word-wrap: break-word;
   }
   header nav {
     color: white;
@@ -102,6 +95,24 @@ word-wrap: break-word
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+  .educ h1,h2,h4 {
+    margin: 0;
+    padding: 0;
+  }
+  .hidden h2,h3,h4 {
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 490px) {
+    .hidden h2,h3,h4,p {
+      font-size: 1rem;
+      overflow: hidden; /* Ajout de l'overflow caché */
+    }
+    .educ h1,h2,h4,p {
+      font-size: 1rem;
+      overflow: hidden; /* Ajout de l'overflow caché */
+    }
   }
   nav {
     flex: 1;
@@ -142,15 +153,30 @@ gap: 15px;
 justify-content: center;
 flex-direction: column;
 }
-/* Appliquer un style à l'image */
+/* hidden = professionel experience + skills */ 
 section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
   grid-column: 2 / 8; /* 2/8 = a gauche  */
-  background: var(--dark-bg);
   border: 3px solid gray;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 2rem;
+  background: var(--dark-bg);
   margin-bottom: var(--spacing);
 }
+section.educ {
+  grid-column: 6 / 12; /* 6/12 = a droite  */
+  background: var(--dark-bg);
+  border: 3px solid gray;
+  font-size: 2rem;
+  margin-bottom: var(--spacing);
+  }
+section.present {
+  display: flex;
+  gap:20vw;
+  margin-top: 10vh;
+  grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
+  margin-bottom: var(--spacing);
+  }
+/* Appliquer un style à l'image */
+
 #textcert {
 display: flex;
 justify-content: center;
@@ -174,16 +200,6 @@ footer.cert {
   width: 10%;
   height: 20%;
 }
-section.educ {
-  grid-column: 6 / 12; /* 6/12 = a droite  */
-  padding: 2rem;
-  background: var(--dark-bg);
-  border: 3px solid gray;
-  font-size: 1.25rem;
-  width: auto;
-  line-height: 1.5;
-  margin-bottom: var(--spacing);
-  }
   .educ .coverweb img  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
