@@ -74,8 +74,13 @@ hidenelement.forEach((el)=>observer.observe(el)) // observe all hiddenelement
 /// to animation 
 const educelem = document.querySelectorAll('.educ')
 educelem.forEach((xi)=>observer.observe(xi))
+
 const mypresent = document.querySelectorAll('.mypresent')
 mypresent.forEach((dr)=>observer.observe(dr))
+
+const bloc = document.querySelectorAll('.bloc')
+bloc.forEach((si)=>observer.observe(si))
+
 /// to scrolling
 const myclique = document.getElementById('myeduc'); // byId direct sans . / dans class dire . 
 myclique.addEventListener('click' , () => {

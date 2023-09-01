@@ -23,6 +23,12 @@ width: 90%;
   transform: translateX(-100%);
   transition:  all 1s;
 }
+.bloc {
+  opacity: 0;
+  filter: blur(3px); /*portrait*/
+  transform: translateX(-100%);
+  transition:  all 1s;
+}
 .show {
 opacity: 1;
 filter: blur(0);
@@ -73,20 +79,7 @@ margin-bottom: var(--spacing);
   grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
 }
 }
-@media screen and (max-width: 700px) { /* de 1050px et + il s'aplique ca*/
-.mypresent {
-  max-width: 100%;
-}
-.mypresent h1,p  {
-  font-size: 1rem;
-  padding: 0;
-}
-blockquote p {
-  font-size: 1rem;
-  white-space: nowrap;
-  max-width: 100%;
-} 
-}
+
 .mypresent { 
 padding: 2rem;
 background: var(--dark-bg);
@@ -118,15 +111,27 @@ word-wrap: break-word
   }
   /* Media Query pour les écrans de petite taille */
   @media screen and (max-width: 700px) {
+    .educ h2 {
+      font-size: 1rem; /* Adjust font size as needed */
+    }
+    .bloc p {
+      max-width: 100%;
+      font-size: 1.3rem;
+    }
     header {
       flex-direction: column; /* Passer à une disposition verticale pour les petits écrans */
       max-width: 40vh;
     }
-    nav {
-      width: 100%; /* Occuper la largeur complète de l'écran */
+    .mypresent h1,p  {
+      font-size: 1rem;
+      padding: 0;
     }
+    blockquote p {
+      font-size: 1rem;
+      white-space: nowrap;
+      max-width: 100%;
+    } 
   }
-  
   header nav {
     color: white;
     max-width: 100%;
@@ -186,15 +191,6 @@ section.educ {
   .educ .coverweb h2  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
-  }
-  @media screen and (max-width: 600px) { /* il s'aplique au 600 et -*/
-    .educ h2 {
-      font-size: 1rem; /* Adjust font size as needed */
-    }
-    .bloc p {
-      max-width: 100%;
-      font-size: 1.3rem;
-    }
   }
 blockquote {
   margin: 0;
