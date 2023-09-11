@@ -96,6 +96,20 @@ word-wrap: break-word;
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  .myqr {
+    height: 20vh;
+  }
+    .myqr img {
+      padding: 1rem;
+      border: 2px solid #060606;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+    }
+    .myqr:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    }
   .educ h1,h2,h4 {
     margin: 0;
     padding: 0;
@@ -155,6 +169,7 @@ display: flex;
 gap: 15px;
 justify-content: center;
 flex-direction: column;
+align-items: center;
 }
 /* hidden = professionel experience + skills */ 
 section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
@@ -226,4 +241,17 @@ blockquote p {
 .left {
   grid-column: 6 / 12;
   border: 3px solid gray;
+}
+.dernierediv {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+  height: 100%;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  gap: 50px;
+}
+.mousg {
+  display: flex;
+  width: 100%;
 }
