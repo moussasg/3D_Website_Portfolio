@@ -32,6 +32,7 @@ pointLight.position.set(20,20,20)
 scene.add(pointLight ,ambientLight)
 /// we put controls inside function animate 
 const controls = new OrbitControls(camera , renderer.domElement) // importé au début , function OrbitControls pour tourné obj en 3D
+controls.enableZoom = false;
 // for background we put spaceTexture inside scene.background
 const imgfuse = document.getElementById('myfuse'); // myfuse jbtha m index.html
 const imgreet = document.getElementById('mygreet'); // myfuse jbtha m index.html
@@ -81,6 +82,8 @@ mypresent.forEach((dr)=>observer.observe(dr))
 const bloc = document.querySelectorAll('.bloc')
 bloc.forEach((si)=>observer.observe(si))
 
+const sectionskills = document.querySelectorAll('.sectionskills')
+sectionskills.forEach((li)=>observer.observe(li))
 /// to scrolling
 const myclique = document.getElementById('myeduc'); // byId direct sans . / dans class dire . 
 myclique.addEventListener('click' , () => {

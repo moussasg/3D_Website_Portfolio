@@ -6,12 +6,20 @@ canvas {
 .widthimg {
   width:400px;
 }
-.hidden {
+.hid {
 opacity: 0;
 filter: blur(5px); /*portrait*/
 transform: translateX(-100%);
 transition:  all 1s;
 width: 90%;
+}
+/*for animation*/
+.sectionskills {
+  opacity: 0;
+filter: blur(3px); /*portrait*/
+transform: translateX(-100%);
+transition:  all 1s;
+width: 100%;
 }
 .educ {
 opacity: 0;
@@ -27,6 +35,8 @@ width: 90%;
   transition:  all 1s;
 }
 .bloc {
+  width: 70%;
+  white-space: nowrap; /* Empêche le texte de sauter à la ligne */
   opacity: 0;
   filter: blur(3px); /*portrait*/
   transform: translateX(-100%);
@@ -38,12 +48,27 @@ filter: blur(0);
 transform: translateX(0);
 transition : all 1s;
 }
+/*for animation*/
+
 :root {
 --dark-bg: rgba(15, 15, 15, 0.95);
 --spacing: 350px;
 font-family: brandon-grotesque, sans-serif;
 font-weight: 400;
 font-style: normal;
+}
+section.sectionskills {
+  grid-column: 2 / 8; /* 6/12 = a droite  */
+  background: var(--dark-bg);
+  border: 3px solid gray;
+  position: relative;
+  margin-left: 10vw;
+  font-size: 2rem;
+  margin-bottom: var(--spacing);
+  height: auto;
+}
+.sectionskills h2,h3,h5 {
+  overflow: hidden; /* Ajout de l'overflow caché */
 }
 main {
 width: 90%;
@@ -57,7 +82,7 @@ grid-template-columns: repeat(12, 1fr);
 }
 h1, h2, h3, blockquote {
 font-family: elevon, sans-serif;
-font-weight: 700;
+font-weight: 600;
 font-style: normal;
 }
 canvas {
@@ -74,7 +99,6 @@ display: flex;
   grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
 }
 }
-
 .mypresent { 
 padding: 2rem;
 background: var(--dark-bg);
@@ -116,12 +140,12 @@ word-wrap: break-word;
     margin: 0;
     padding: 0;
   }
-  .hidden h2,h3,h4 {
+  .hid h2,h3,h4 {
     margin: 0;
     padding: 0;
   }
   @media screen and (max-width: 490px) {
-    .hidden h2,h3,h4,p {
+    .hid h2,h3,h4,p {
       font-size: 1rem;
       overflow: hidden; /* Ajout de l'overflow caché */
     }
@@ -140,12 +164,28 @@ word-wrap: break-word;
     margin: 5px;
   }
   /* Media Query pour les écrans de petite taille */
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1000px) {
+    .myqr {
+      display: none;
+    }
+    canvas#bg {
+      width: 100%;
+      height: 100%;
+    }
+    section.educ {
+      position: relative;
+      margin-left: -40vw;
+    }
+    section.sectionskills {
+      width: 200px;
+    }
+    .sectionskills h3,h5,h2  {
+      font-size: 1rem;
+    }
     .educ h2 {
       font-size: 1rem; /* Adjust font size as needed */
     }
     .bloc p {
-      max-width: 100%;
       font-size: 1.3rem;
     }
     header {
@@ -174,7 +214,7 @@ flex-direction: column;
 align-items: center;
 }
 /* hidden = professionel experience + skills */ 
-section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
+section.hid { /*tbda b colonne 2 / tkhlass b colonne 8 */
   grid-column: 2 / 8; /* 2/8 = a gauche  */
   border: 3px solid gray;
   font-size: 2rem;
@@ -182,6 +222,8 @@ section.hidden { /*tbda b colonne 2 / tkhlass b colonne 8 */
   margin-bottom: var(--spacing);
 }
 section.educ {
+  position: relative;
+  margin-left:10vw ;
   grid-column: 6 / 12; /* 6/12 = a droite  */
   background: var(--dark-bg);
   border: 3px solid gray;
@@ -222,7 +264,6 @@ footer.cert {
   .educ .coverweb img  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
-
   }
   .educ .coverweb h2  {
     max-width: 100%; /* Make the images responsive */
@@ -230,8 +271,10 @@ footer.cert {
   }
 blockquote {
   margin: 0;
+  position: relative;
+  margin-left: 50%;
   padding: 0;
-  grid-column: 2 / span 9;
+  grid-column: 2 / span 8;
   margin-bottom: var(--spacing);
 }
 blockquote p {
