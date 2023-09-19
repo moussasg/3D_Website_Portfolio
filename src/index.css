@@ -3,6 +3,9 @@ canvas {
   top: 0;
   left: 0;  
 }
+.widthimg {
+  width:400px;
+}
 .hidden {
 opacity: 0;
 filter: blur(5px); /*portrait*/
@@ -65,7 +68,6 @@ left: 0;
 .my_resume {
 display: flex;
 }
-
 @media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
 .present {
   white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
@@ -220,6 +222,7 @@ footer.cert {
   .educ .coverweb img  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
+
   }
   .educ .coverweb h2  {
     max-width: 100%; /* Make the images responsive */
