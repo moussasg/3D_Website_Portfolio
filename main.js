@@ -73,8 +73,8 @@ const hidenelement = document.querySelectorAll('.hidden') // select all hidden c
 // Commence l'observation
 hidenelement.forEach((el)=>observer.observe(el)) // observe all hiddenelement
 /// to animation 
-const educelem = document.querySelectorAll('.educ')
-educelem.forEach((xi)=>observer.observe(xi))
+const sectionacomp = document.querySelectorAll('.sectionacompli')
+sectionacomp.forEach((xi)=>observer.observe(xi))
 
 const mypresent = document.querySelectorAll('.mypresent')
 mypresent.forEach((dr)=>observer.observe(dr))
@@ -89,11 +89,6 @@ const myclique = document.getElementById('myeduc'); // byId direct sans . / dans
 myclique.addEventListener('click' , () => {
 const refelem = document.getElementById('goeduc');
 refelem.scrollIntoView({ behavior: 'smooth' }) 
-})
-const myprofession = document.getElementById('myprof');
-myprofession.addEventListener('click' , () => {
-const refprofession = document.getElementById('goprofe');
-refprofession.scrollIntoView({ behavior: 'smooth' }) 
 })
 const myskils = document.getElementById('myskils');
 myskils.addEventListener('click' , () => {

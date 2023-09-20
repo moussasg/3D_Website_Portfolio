@@ -7,13 +7,6 @@ canvas {
 .widthimg {
   width:400px;
 }
-.hid {
-opacity: 0;
-filter: blur(5px); /*portrait*/
-transform: translateX(-100%);
-transition:  all 1s;
-width: 90%;
-}
 /*for animation*/
 .sectionskills {
   opacity: 0;
@@ -22,7 +15,7 @@ transform: translateX(-100%);
 transition:  all 1s;
 width: 100%;
 }
-.educ {
+.sectionacompli {
 opacity: 0;
 filter: blur(3px); /*portrait*/
 transform: translateX(-100%);
@@ -58,14 +51,21 @@ font-weight: 400;
 font-style: normal;
 }
 section.sectionskills {
-  grid-column: 2 / 8; /* 6/12 = a droite  */
+  position: relative;
+  grid-column: 1 / 7; /* 6/12 = a droite  */
   background: var(--dark-bg);
   border: 3px solid gray;
-  position: relative;
-  margin-left: 10vw;
+  margin-left: 5vw;
   font-size: 2rem;
   margin-bottom: var(--spacing);
-  height: auto;
+}
+section.sectionacompli {
+  margin-left: 30vw;
+  grid-column:  1/ 7; /* 6/12 = a droite  */
+  background: var(--dark-bg);
+  border: 3px solid gray;
+  font-size: 2rem;
+  margin-bottom: var(--spacing);
 }
 .sectionskills h2,h3,h5 {
   overflow: hidden; /* Ajout de l'overflow caché */
@@ -93,12 +93,6 @@ left: 0;
 .my_resume {
 display: flex;
 }
-@media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
-.present {
-  white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
-  grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
-}
-}
 .mypresent { 
 padding: 2rem;
 background: var(--dark-bg);
@@ -111,8 +105,10 @@ line-height: 2.5;
 padding: 0;
 word-wrap: break-word;
   }
-  header nav {
-    color: white;
+  nav#myacomp , nav#myeduc , nav#myskils  , nav#myacomp , nav#mydownload  {
+    width: 50px;
+    display: flex;
+    justify-content: center;
   }
   header {
     width: 100%;
@@ -136,7 +132,7 @@ word-wrap: break-word;
       transform: scale(1.05);
       box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
     }
-  .educ h1,h2,h4 {
+  .sectionacompli h1,h2,h4 {
     margin: 0;
     padding: 0;
   }
@@ -144,96 +140,23 @@ word-wrap: break-word;
     margin: 0;
     padding: 0;
   }
-  @media screen and (max-width: 490px) {
-    .hid h2,h3,h4,p {
-      font-size: 1rem;
-      overflow: hidden; /* Ajout de l'overflow caché */
-    }
-    .educ h1,h2,h4,p {
-      font-size: 1rem;
-      overflow: hidden; /* Ajout de l'overflow caché */
-    }
-    div#textcert {
-      font-size: 10px;
-    }
-  }
-  nav {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-    margin: 5px;
-  }
-  /* Media Query pour les écrans de petite taille */
-  @media screen and (max-width: 1000px) {
-    .myqr {
-      display: none;
-    }
-    canvas#bg {
-      width: 100vw;
-      height: 100%;
-    }
-    section.educ {
-      position: relative;
-      margin-left: -40vw;
-    }
-    section.sectionskills {
-      width: 200px;
-    }
-    .sectionskills h3,h5,h2  {
-      font-size: 1rem;
-    }
-    .educ h2 {
-      font-size: 1rem; /* Adjust font size as needed */
-    }
-    .bloc p {
-      font-size: 1.3rem;
-      max-width: 100%;
-    }
-    header {
-      flex-direction: column; /* Passer à une disposition verticale pour les petits écrans */
-      max-width: 40vh;
-    }
-    .mypresent h1,p  {
-      font-size: 1rem;
-      padding: 0;
-    }
-    blockquote p {
-      font-size: 1rem;
-      white-space: nowrap;
-    } 
-  }
   header nav {
+    margin-top: 1vh;
     color: white;
     max-width: 100%;
   }
-.acomp {
+.acompli {
 display: flex;
 gap: 15px;
 justify-content: center;
 flex-direction: column;
 align-items: center;
 }
-/* hidden = professionel experience + skills */ 
-section.hid { /*tbda b colonne 2 / tkhlass b colonne 8 */
-  grid-column: 2 / 8; /* 2/8 = a gauche  */
-  border: 3px solid gray;
-  font-size: 2rem;
-  background: var(--dark-bg);
-  margin-bottom: var(--spacing);
-}
-section.educ {
-  position: relative;
-  margin-left:10vw ;
-  grid-column: 6 / 12; /* 6/12 = a droite  */
-  background: var(--dark-bg);
-  border: 3px solid gray;
-  font-size: 2rem;
-  margin-bottom: var(--spacing);
-  }
 section.present {
+  margin-left: 4vw;
   display: flex;
   gap:20vw;
-  margin-top: 10vh;
+  margin-top: -2vh;
   grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
   margin-bottom: var(--spacing);
   }
@@ -264,11 +187,12 @@ footer.cert {
   width: 100%;
   justify-content: center;
 }
-  .educ .coverweb img  {
+  .sectionacompli .coverweb img  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
+    display: flex;
   }
-  .educ .coverweb h2  {
+  .sectionacompli .coverweb h2  {
     max-width: 100%; /* Make the images responsive */
     height: auto; /* Maintain aspect ratio */
   }
@@ -289,9 +213,9 @@ blockquote p {
   grid-column: 6 / 12;
   border: 3px solid gray;
 }
-.dernierediv {
+section.dernierediv {
   display: flex;
-  width: 100%;
+  width: 10%;
   margin-top: 100px;
   height: 100%;
   align-items: flex-end;
@@ -305,7 +229,9 @@ blockquote p {
 .stylethanks {
   background-color:white;
   height: 10px;
+  width: auto;
   display: inline;
+  white-space: nowrap;
   font-size: 4rem;
   line-height: 1;
   font-family: elevon, sans-serif;
@@ -315,4 +241,89 @@ font-style: normal;
 blockquote .footer {
   display: flex;
   width: 100%;
+}
+@media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
+.present {
+  white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
+  grid-column: 2 / 7; /*ybda f 2 ykhlass f 6*/
+}
+}
+@media screen and (max-width: 490px) {
+  div#tag {
+    position: relative;
+    width: 10%;
+    right: 70%;
+    top:70%;
+  }
+  .hid h2,h3,h4,p {
+    font-size: 1rem;
+    overflow: hidden; /* Ajout de l'overflow caché */
+  }
+  .sectionacompli h1,h2,h4,p {
+    font-size: 1rem;
+    overflow: hidden; /* Ajout de l'overflow caché */
+  }
+  div#textcert {
+    font-size: 10px;
+  }
+}
+nav {
+  flex: 1;
+  text-align: center;
+  min-width: 200px;
+  margin: 5px;
+}
+.animation {
+  position: relative;
+  margin-right: 15vw;
+}
+div#tag {
+  position: relative;
+  left:60%;
+}
+/* Media Query pour les écrans de petite taille */
+@media screen and (max-width: 1000px) {
+  div#tag {
+    position: relative;
+    width: 10%;
+    right: 70%;
+    top:70%;
+  }
+  .myqr {
+    display: none;
+  }
+  canvas#bg {
+    width: 100vw;
+    height: 100%;
+  }
+  section.sectionacompli {
+    position: relative;
+    grid-column: 1/6;
+    top:30vh;
+  }
+  section.sectionskills {
+    width: 200px;
+  }
+  .sectionskills h3,h5,h2  {
+    font-size: 1rem;
+  }
+  .sectionacompli h2 {
+    font-size: 1rem; /* Adjust font size as needed */
+  }
+  .bloc p {
+    font-size: 1.3rem;
+    max-width: 100%;
+  }
+  header {
+    flex-direction: column; /* Passer à une disposition verticale pour les petits écrans */
+    max-width: 40vh;
+  }
+  .mypresent h1,p  {
+    font-size: 1rem;
+    padding: 0;
+  }
+  blockquote p {
+    font-size: 1rem;
+    white-space: nowrap;
+  } 
 }
