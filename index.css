@@ -1,3 +1,4 @@
+
 canvas {
   position: fixed;
   top: 0;
@@ -35,7 +36,6 @@ width: 90%;
   transition:  all 1s;
 }
 .bloc {
-  width: 70%;
   white-space: nowrap; /* Empêche le texte de sauter à la ligne */
   opacity: 0;
   filter: blur(3px); /*portrait*/
@@ -169,7 +169,7 @@ word-wrap: break-word;
       display: none;
     }
     canvas#bg {
-      width: 100%;
+      width: 100vw;
       height: 100%;
     }
     section.educ {
@@ -187,6 +187,7 @@ word-wrap: break-word;
     }
     .bloc p {
       font-size: 1.3rem;
+      max-width: 100%;
     }
     header {
       flex-direction: column; /* Passer à une disposition verticale pour les petits écrans */
@@ -199,7 +200,6 @@ word-wrap: break-word;
     blockquote p {
       font-size: 1rem;
       white-space: nowrap;
-      max-width: 100%;
     } 
   }
   header nav {
@@ -250,6 +250,7 @@ background: -webkit-linear-gradient(top, rgb(191, 0, 255), rgb(207, 207, 214));
 }
 .fotrcert {
 display: flex;
+justify-content: center;
 gap: 8%;
 }
 .fotrcert > div { /* > siginie les enfants direct du fotrcert */
@@ -259,7 +260,9 @@ gap: 8%;
   width: 90%;
 }
 footer.cert {
-  max-width: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
   .educ .coverweb img  {
     max-width: 100%; /* Make the images responsive */
@@ -271,8 +274,6 @@ footer.cert {
   }
 blockquote {
   margin: 0;
-  position: relative;
-  margin-left: 50%;
   padding: 0;
   grid-column: 2 / span 8;
   margin-bottom: var(--spacing);
@@ -298,6 +299,20 @@ blockquote p {
   gap: 50px;
 }
 .mousg {
+  display: flex;
+  width: 100%;
+}
+.stylethanks {
+  background-color:white;
+  height: 10px;
+  display: inline;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: elevon, sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+blockquote .footer {
   display: flex;
   width: 100%;
 }
