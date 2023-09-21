@@ -1,9 +1,16 @@
-
-canvas {
+html {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+canvas#bg {
   position: fixed;
   top: 0;
-  left: 0;  
-}
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
 .widthimg {
   width:400px;
 }
@@ -67,7 +74,10 @@ section.sectionacompli {
   font-size: 2rem;
   margin-bottom: var(--spacing);
 }
-.sectionskills h2,h3,h5 {
+.sectionacompli {
+  overflow: hidden; /* Ajout de l'overflow caché */
+}
+.sectionskills h1,h4 {
   overflow: hidden; /* Ajout de l'overflow caché */
 }
 main {
@@ -84,11 +94,6 @@ h1, h2, h3, blockquote {
 font-family: elevon, sans-serif;
 font-weight: 600;
 font-style: normal;
-}
-canvas {
-position: fixed;
-top: 0;
-left: 0;
 }
 .my_resume {
 display: flex;
@@ -242,6 +247,7 @@ blockquote .footer {
   display: flex;
   width: 100%;
 }
+
 @media screen and (min-width: 1050px) { /* de 1050px et + il s'aplique ca*/
 .present {
   white-space: nowrap; /* Appliquer nowrap uniquement lorsque l'écran dépasse 1300px */
@@ -249,18 +255,16 @@ blockquote .footer {
 }
 }
 @media screen and (max-width: 490px) {
-  div#tag {
-    position: relative;
-    width: 10%;
-    right: 70%;
-    top:70%;
+  canvas#bg {
+    height: 100vh;
+    width: 100%;
   }
   .hid h2,h3,h4,p {
     font-size: 1rem;
     overflow: hidden; /* Ajout de l'overflow caché */
   }
   .sectionacompli h1,h2,h4,p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     overflow: hidden; /* Ajout de l'overflow caché */
   }
   div#textcert {
@@ -280,21 +284,23 @@ nav {
 div#tag {
   position: relative;
   left:60%;
+  top: 5%;
+}
+@media screen and (min-width: 200px) and (max-width: 1000px) {
+  .sectionacompli h1,h4 {
+    font-size: 0.9rem;
+    overflow: hidden; /* Ajout de l'overflow caché */
+  }
+  div#tag {
+    position: relative;
+    left: -45%;
+    top:65%;
+  }
 }
 /* Media Query pour les écrans de petite taille */
 @media screen and (max-width: 1000px) {
-  div#tag {
-    position: relative;
-    width: 10%;
-    right: 70%;
-    top:70%;
-  }
   .myqr {
     display: none;
-  }
-  canvas#bg {
-    width: 100vw;
-    height: 100%;
   }
   section.sectionacompli {
     position: relative;
